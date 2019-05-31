@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .profile{
+            border-radius: 50%;
+            
+        }
+        h1{
+           text-align: center;
+           margin-top: 5%;
+
+        }
+            ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        /* li a:hover {
+          background-color: #111;
+        } */
+        /* Change the link color on hover */
+        li a:hover {
+          background-color: #555;
+          color: white;
+        }
+                </style>
+</head>
+<body>
+    <nav>
+        <ul>
+                <% if(user) {%>
+                    <li><a href="/auth/logout"  >Logout</a></li>
+                    <% }else { %>
+                    <li><a href="/auth/login" >Login</a></li>
+                    <% } %>
+            <li><a href="/" >Homepage</a></li>
+            <li><a href="/profile">Profile</a></li>
+        </ul>
+    </nav>
+    <h1>welcome to your profile, <img class = "profile" src="<%= user.thumbnail%>" width="80" height="80" alt="" align="middle" >  <%= user.username %></h1>
+    
+     
+     <!-- = sign is required when we are directly outputing something -->
+    
+</body>
+</html>
