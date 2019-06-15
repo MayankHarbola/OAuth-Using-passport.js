@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  
+</head>
+<body onload="start()" >
+    This is home  
+    <a href="http://localhost:1234/google"><button class = "login">login</button></a>
+    <a href="http://localhost:1234/logout"><button class="logout">logout</button></a>
+</body>
+
+<script>
+    function start(){
+        const urlParams = new URLSearchParams(window.location.search);
+        if(urlParams.has("name") === true && urlParams.has("thumbnail") === true){
+         localStorage.myname = urlParams.get('name');
+         localStorage.thumbnail = urlParams.get('thumbnail');
+    }else{
+        localStorage.myname = "";
+        localStorage.thumbnail = "";
+    }
+    }
+//         function check(){
+//     const urlParams = new URLSearchParams(window.location.search);
+
+//     if(urlParams.has("name") === true && urlParams.has("thumbnail") === true){
+//          localStorage.myname = urlParams.get('name');
+//          localStorage.thumbnail = urlParams.get('thumbnail');
+//     }else{
+//         localStorage.myname = "";
+//         localStorage.thumbnail = "";
+//     }
+// }
+//   function init(){
+//     localStorage.myname = "";
+//     localStorage.thumbnail = "";
+//   }
+
+//   document.querySelector(".login").addEventListener("click",()=>{
+
+   
+//     const urlParams = new URLSearchParams(window.location.search);
+
+//     if(urlParams.has("name") === true && urlParams.has("thumbnail") === true){
+//         console.log("me chala");
+//          localStorage.myname = urlParams.get('name');
+//          localStorage.thumbnail = urlParams.get('thumbnail');
+//     }
+//     else{
+//         console.log("ab bata");
+//     }
+//   })
+
+//   document.querySelector(".logout").addEventListener("click",()=>{
+//    init();
+//   })
+
+
+    </script>
+</html>
