@@ -9,6 +9,7 @@ function sendEmails(subject,message,recipients,response){
                 pass: 'yoyohoneysing'
             }
         });
+        //MAil options object
         let mailOption = {
             from = 'mayankharbola25@gmail.com', // sender Address
             to: recipients,
